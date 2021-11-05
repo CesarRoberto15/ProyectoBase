@@ -10,10 +10,10 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.ProyectoBase">
         <activity
-            android:name=".Second_Activity"
+            android:name=".ui.Second_Activity"
             android:exported="false" />
         <activity
-            android:name=".MainActivity"
+            android:name=".ui.MainActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />

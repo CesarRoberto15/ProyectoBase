@@ -1,4 +1,4 @@
-package com.lab02.proyectobase;
+package com.lab02.proyectobase.ui;
 
 import androidx.annotation.NonNull;
 import androidx.appcompat.app.AppCompatActivity;
@@ -9,6 +9,7 @@ import android.os.Bundle;
 import android.view.MenuItem;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
+import com.lab02.proyectobase.R;
 
 public class Second_Activity extends AppCompatActivity {
 
