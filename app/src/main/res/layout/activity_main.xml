@@ -1,69 +1,80 @@
 <?xml version="1.0" encoding="utf-8"?>
-<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<layout xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
-    xmlns:tools="http://schemas.android.com/tools"
-    android:layout_width="match_parent"
-    android:layout_height="match_parent"
-    tools:context=".ui.MainActivity">
+    xmlns:tools="http://schemas.android.com/tools">
 
-    <TextView
-        android:id="@+id/title_system"
+    <data>
+        <variable
+            name="viewModel"
+            type="com.lab02.proyectobase.viewmodel.MainViewModel" />
+    </data>
+
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:fontFamily="sans-serif-black"
-        android:textColor="@color/green_normal"
-        android:textSize="30sp"
-        android:text="Sistema de Veterinarias"
-        android:textAlignment="center"
-        android:gravity="center" />
+        android:layout_height="match_parent"
+        tools:context=".ui.MainActivity">
 
-    <EditText
-        android:id="@+id/edt_email"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/title_system"
-        android:layout_marginTop="90dp"
-        android:hint="Email"
-        android:paddingLeft="10dp"
-        android:textSize="15dp" />
+        <TextView
+            android:id="@+id/title_system"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/green_normal"
+            android:textSize="30sp"
+            android:text="Sistema de Veterinarias"
+            android:textAlignment="center"
+            android:gravity="center" />
 
-    <EditText
-        android:id="@+id/edt_password"
-        android:layout_width="300dp"
-        android:layout_height="40dp"
-        android:layout_centerHorizontal="true"
-        android:layout_below="@+id/edt_email"
-        android:layout_marginTop="30dp"
-        android:hint="Password"
-        android:paddingLeft="10dp"
-        android:textSize="15sp" />
+        <EditText
+            android:id="@+id/edt_email"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/title_system"
+            android:layout_marginTop="90dp"
+            android:hint="Email"
+            android:paddingLeft="10dp"
+            android:textSize="15dp" />
 
-    <Button
-        android:id="@+id/btn_login"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="40dp"
-        android:layout_below="@+id/edt_password"
-        android:text="Iniciar Sesion"
-        android:textSize="15sp"
-        android:textAllCaps="false"
-        android:textColor="#ffffff"
-        android:background="#236fdd"/>
+        <EditText
+            android:id="@+id/edt_password"
+            android:layout_width="300dp"
+            android:layout_height="40dp"
+            android:layout_centerHorizontal="true"
+            android:layout_below="@+id/edt_email"
+            android:layout_marginTop="30dp"
+            android:hint="Password"
+            android:paddingLeft="10dp"
+            android:textSize="15sp" />
 
-    <Button
-        android:id="@+id/btn_invited"
-        android:layout_width="200dp"
-        android:layout_height="wrap_content"
-        android:layout_centerHorizontal="true"
-        android:layout_marginTop="20dp"
-        android:layout_below="@+id/btn_login"
-        android:text="Invitado"
-        android:textSize="15sp"
-        android:textAllCaps="false"
-        android:textColor="#ffffff"
-        android:background="#236fdd"/>
+        <Button
+            android:id="@+id/btn_login"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:layout_below="@+id/edt_password"
+            android:text="Iniciar Sesion"
+            android:onClick="@{()->viewModel.goToMenu()}"
+            android:textSize="15sp"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:background="#236fdd" />
 
-</RelativeLayout>
+        <Button
+            android:id="@+id/btn_invited"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="20dp"
+            android:layout_below="@+id/btn_login"
+            android:text="Invitado"
+            android:textSize="15sp"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:onClick="@{()->viewModel.goToMenu()}"
+            android:background="#236fdd" />
+
+    </RelativeLayout>
+</layout>
