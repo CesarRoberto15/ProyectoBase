@@ -36,5 +36,4 @@
         android:textSize="12sp"
         android:text="Datos de la Grafica"
         />
-
 </FrameLayout>
