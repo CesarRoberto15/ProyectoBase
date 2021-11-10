@@ -35,7 +35,8 @@
             android:layout_marginTop="90dp"
             android:hint="Email"
             android:paddingLeft="10dp"
-            android:textSize="15dp" />
+            android:textSize="15dp"
+            android:text="@={viewModel.correo}"/>
 
         <EditText
             android:id="@+id/edt_password"
@@ -46,7 +47,8 @@
             android:layout_marginTop="30dp"
             android:hint="Password"
             android:paddingLeft="10dp"
-            android:textSize="15sp" />
+            android:textSize="15sp"
+            android:text="@={viewModel.password}"/>
 
         <Button
             android:id="@+id/btn_login"
@@ -56,7 +58,20 @@
             android:layout_marginTop="40dp"
             android:layout_below="@+id/edt_password"
             android:text="Iniciar Sesion"
-            android:onClick="@{()->viewModel.goToMenu()}"
+            android:onClick="@{()->viewModel.iniciarSesion()}"
+            android:textSize="15sp"
+            android:textAllCaps="false"
+            android:textColor="#ffffff"
+            android:background="#236fdd" />
+        <Button
+            android:id="@+id/btn_registrarse"
+            android:layout_width="200dp"
+            android:layout_height="wrap_content"
+            android:layout_centerHorizontal="true"
+            android:layout_marginTop="40dp"
+            android:layout_below="@+id/btn_login"
+            android:text="Registrarse"
+            android:onClick="@{()->viewModel.addCliente()}"
             android:textSize="15sp"
             android:textAllCaps="false"
             android:textColor="#ffffff"
@@ -68,13 +83,25 @@
             android:layout_height="wrap_content"
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
-            android:layout_below="@+id/btn_login"
+            android:layout_below="@+id/btn_registrarse"
             android:text="Invitado"
             android:textSize="15sp"
             android:textAllCaps="false"
             android:textColor="#ffffff"
             android:onClick="@{()->viewModel.goToMenu()}"
             android:background="#236fdd" />
+        <TextView
+            android:id="@+id/aux"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_below="@+id/btn_invited"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/green_normal"
+            android:textSize="10sp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:text="@={viewModel.text}"/>
 
     </RelativeLayout>
 </layout>

@@ -2,4 +2,11 @@
     <string name="app_name">ProyectoBase</string>
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
+    
+    <string name="correo_vacio">Ingrese un correo valido</string>
+    <string name="password_vacio">Ingrese una contraseña valida</string>
+
+    <!-- DATABASE FIREBASE -->
+    <string name="registro_exitoso">Registro Exitoso</string>
+    <string name="registro_error">Hubo un problema a la hora de Registrar</string>
 </resources>

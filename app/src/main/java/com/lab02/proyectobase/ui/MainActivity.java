@@ -6,11 +6,15 @@ import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 
 import android.content.Intent;
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.View;
 import android.widget.Button;
+import android.widget.Toast;
+
 import com.lab02.proyectobase.R;
 import com.lab02.proyectobase.databinding.ActivityMainBinding;
+import com.lab02.proyectobase.model.Data.DbHelper;
 import com.lab02.proyectobase.viewmodel.MainViewModel;
 
 public class MainActivity extends AppCompatActivity {
@@ -29,16 +33,18 @@ public class MainActivity extends AppCompatActivity {
         mBinding.setViewModel(mViewModel);
         mBinding.setLifecycleOwner(this);
         setupNavigation();
+        setupDataBase();
 
-        /*btn_invitado=(Button) findViewById(R.id.btn_invited);
 
-        btn_invitado.setOnClickListener(new View.OnClickListener() {
-            @Override
-            public void onClick(View view) {
-                Intent l=new Intent(MainActivity.this, Second_Activity.class);
-                startActivity(l);
-            }
-        });*/
+    }
+    private void setupDataBase() {
+        DbHelper dbHelper = new DbHelper (this);
+        SQLiteDatabase db =dbHelper.getWritableDatabase();
+        if ( db!= null){
+            Toast.makeText(this, "BASE DE DATOS CREADA", Toast.LENGTH_LONG).show();
+        }else{
+            Toast.makeText(this, "BASE DE DATOS NO CREADA", Toast.LENGTH_LONG).show();
+        }
 
     }
     //METODO PARA GESTIONAR LOS EVENTOS QUE SE VAN DANDO
@@ -50,6 +56,35 @@ public class MainActivity extends AppCompatActivity {
                 goToMenu();
             }
         });
+        mViewModel.getError().observe(this, event -> {
+            // Mostrar error en el nombre de la categoría
+            Integer msg = event.getContentIfNotHandled();
+            if (msg != null) {
+                switch (msg)
+                {
+                    case R.string.correo_vacio:  mBinding.edtEmail.setError(getText(msg));
+                        break;
+                    case R.string.password_vacio:  mBinding.edtPassword.setError(getText(msg));
+                        break;
+                }
+            }
+        });
+        mViewModel.getDatabaseError().observe(this, event -> {
+            // Mostrar error en el nombre de la categoría
+            Integer msg = event.getContentIfNotHandled();
+            if (msg != null) {
+                switch (msg)
+                {
+                    case R.string.registro_exitoso:
+                        Toast.makeText(MainActivity.this, R.string.registro_exitoso,Toast.LENGTH_LONG).show();
+                        break;
+                    case R.string.registro_error:
+                        Toast.makeText(MainActivity.this, R.string.registro_error,Toast.LENGTH_LONG).show();
+                        break;
+                }
+            }
+        });
+
     }
 
     private void goToMenu(){

@@ -1,0 +1,39 @@
+{
+  "project_info": {
+    "project_number": "147074039824",
+    "project_id": "idnp-tif",
+    "storage_bucket": "idnp-tif.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:147074039824:android:b696091425a8346fab0a95",
+        "android_client_info": {
+          "package_name": "com.lab02.proyectobase"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "147074039824-emhg0mvhamtmdtas9eugp2977bkv0qjn.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyAJiXzP0A19QmBDSb4t4yOweqa1u6gkwPg"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "147074039824-emhg0mvhamtmdtas9eugp2977bkv0qjn.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}

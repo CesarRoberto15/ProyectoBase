@@ -7,9 +7,14 @@ import androidx.fragment.app.Fragment;
 import androidx.fragment.app.FragmentTransaction;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.database.sqlite.SQLiteDatabase;
 import android.os.Bundle;
 import android.view.MenuItem;
+import android.widget.Toast;
+
 import com.lab02.proyectobase.databinding.ActivitySecondBinding;
+import com.lab02.proyectobase.model.Veterinarias;
+import com.lab02.proyectobase.ui.Adapters.VeterinariasAdapter;
 import com.lab02.proyectobase.viewmodel.MenuViewModel;
 
 import com.google.android.material.bottomnavigation.BottomNavigationView;
@@ -23,6 +28,7 @@ public class Second_Activity extends AppCompatActivity {
 
     private ActivitySecondBinding mBinding;
     private MenuViewModel mViewModel;
+    private VeterinariasAdapter veterinariasAdapter;
     @Override
     protected void onCreate(Bundle savedInstanceState) {
         super.onCreate(savedInstanceState);
@@ -31,10 +37,13 @@ public class Second_Activity extends AppCompatActivity {
         mViewModel = new ViewModelProvider(this).get(MenuViewModel.class);
         mBinding.setViewModel(mViewModel);
         mBinding.setLifecycleOwner(this);
+
         //BottomNavigationView navigation=findViewById(R.id.botton_navigation);
         //navigation.setOnNavigationItemSelectedListener(mOrNavigationItemSelectedListener);
-        loadFragment(firstFragment);
+        mViewModel.addBase(this);
         setupNavigation();
+       // setupListAdapter();
+        loadFragment(firstFragment);
     }
 
     /*private final BottomNavigationView.OnNavigationItemSelectedListener mOrNavigationItemSelectedListener=new BottomNavigationView.OnNavigationItemSelectedListener() {
@@ -54,7 +63,10 @@ public class Second_Activity extends AppCompatActivity {
             return false;
         }
     };*/
+    private void setupListAdapter() {
+        veterinariasAdapter = new VeterinariasAdapter(mViewModel);
 
+    }
     //METODO PARA GESTIONAR LOS EVENTOS QUE SE VAN DANDO
     private void setupNavigation() {
         // Observamos la variable
@@ -75,5 +87,7 @@ public class Second_Activity extends AppCompatActivity {
         FragmentTransaction transaction=getSupportFragmentManager().beginTransaction();
         transaction.replace(R.id.frame_container,fragment);
         transaction.commit();
+
+
     }
 }
