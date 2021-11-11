@@ -38,6 +38,29 @@ public class DbVeterinarias extends DbHelper{
 
         return id;
     }
+    public Veterinarias verVeterinaria(String correo) {
+
+        DbHelper dbHelper = new DbHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        Veterinarias veterinarias = null;
+        Cursor cursorVeterinarias;
+
+        cursorVeterinarias = db.rawQuery("SELECT * FROM " + TABLE_VETERINARIAS + " WHERE correo=  ? " + "LIMIT 1", new String[]{correo});
+
+        if (cursorVeterinarias.moveToFirst()) {
+            veterinarias = new Veterinarias();
+            veterinarias.setId(cursorVeterinarias.getInt(0));
+            veterinarias.setNombre(cursorVeterinarias.getString(1));
+            veterinarias.setDistrito(cursorVeterinarias.getString(2));
+            veterinarias.setUbicacion(cursorVeterinarias.getString(3));
+            veterinarias.setCorreo(cursorVeterinarias.getString(4));
+        }
+
+        cursorVeterinarias.close();
+
+        return veterinarias;
+    }
     public ArrayList<Veterinarias> mostrarVeterinarias() {
 
         DbHelper dbHelper = new DbHelper(context);

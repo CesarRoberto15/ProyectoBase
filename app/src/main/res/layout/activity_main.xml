@@ -102,6 +102,18 @@
             android:textAlignment="center"
             android:gravity="center"
             android:text="@={viewModel.text}"/>
+        <TextView
+            android:id="@+id/auxBase"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:layout_below="@+id/aux"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/green_normal"
+            android:textSize="10sp"
+            android:textAlignment="center"
+            android:gravity="center"
+            android:text="@={viewModel.textBase}"/>
 
     </RelativeLayout>
 </layout>

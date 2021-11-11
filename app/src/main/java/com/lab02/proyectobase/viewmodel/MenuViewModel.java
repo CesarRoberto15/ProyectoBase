@@ -50,8 +50,11 @@ public class MenuViewModel  extends ViewModel  implements BottomNavigationView.O
                     public void onComplete(@NonNull Task<QuerySnapshot> task) {
                         if (task.isSuccessful()) {
                             for (QueryDocumentSnapshot document : task.getResult()) {
-                                dbVeterinarias.insertarVeterinaria(document.getString("nombre"), document.getString("distrito"),
-                                        document.getString("ubicacion") ,document.getString("correo"));
+                                Veterinarias aux= dbVeterinarias.verVeterinaria(document.getString("correo"));
+                                if (aux==null){
+                                    dbVeterinarias.insertarVeterinaria(document.getString("nombre"), document.getString("distrito"),
+                                            document.getString("ubicacion") ,document.getString("correo"));
+                                }
                             }
                         }
                     }

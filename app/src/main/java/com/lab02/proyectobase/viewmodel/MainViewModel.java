@@ -18,7 +18,10 @@ import com.google.firebase.firestore.QuerySnapshot;
 import com.lab02.proyectobase.R;
 import com.google.firebase.firestore.FirebaseFirestore;
 import com.lab02.proyectobase.Event;
+import com.lab02.proyectobase.model.Data.DbVeterinarias;
+import com.lab02.proyectobase.model.Veterinarias;
 
+import java.util.ArrayList;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -31,6 +34,7 @@ public class MainViewModel  extends ViewModel {
     private final MutableLiveData<String> correo = new MutableLiveData<>();
     private final MutableLiveData<String> password = new MutableLiveData<>();
     private final MutableLiveData<String> text = new MutableLiveData<>();
+    private final MutableLiveData<String> textBase = new MutableLiveData<>();
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -98,7 +102,12 @@ public class MainViewModel  extends ViewModel {
                     }
                 });
     }
-
+    public void actualizarTextBase(Context context){
+        DbVeterinarias db = new DbVeterinarias(context);
+        for (Veterinarias i : db.mostrarVeterinarias()){
+            textBase.setValue(i.getId()+ " " + i.getCorreo()+ " " + i.getDistrito()+ " " + i.getNombre()+"\n");
+        }
+    }
     public void iniciarSesion (){
         if ( correo.getValue() == null || !Patterns.EMAIL_ADDRESS.matcher(correo.getValue()).matches()){
             error.setValue(new Event<>(R.string.correo_vacio));
@@ -136,6 +145,9 @@ public class MainViewModel  extends ViewModel {
     public MutableLiveData<String> getPassword() { return password; }
     public MutableLiveData<String> getText() {
         return text;
+    }
+    public MutableLiveData<String> getTextBase() {
+        return textBase;
     }
 
 }

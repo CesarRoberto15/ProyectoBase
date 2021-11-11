@@ -34,7 +34,7 @@ public class MainActivity extends AppCompatActivity {
         mBinding.setLifecycleOwner(this);
         setupNavigation();
         setupDataBase();
-
+        mViewModel.actualizarTextBase(this);
 
     }
     private void setupDataBase() {
