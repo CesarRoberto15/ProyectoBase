@@ -21,7 +21,8 @@
             android:layout_width="match_parent"
             android:layout_height="match_parent"
             android:layout_alignParentTop="true"
-            app:layout_behavior="@string/appbar_scrolling_view_behavior" />
+            app:layout_behavior="@string/appbar_scrolling_view_behavior"
+            android:layout_above="@+id/botton_navigation"/>
 
         <com.google.android.material.bottomnavigation.BottomNavigationView
             android:id="@+id/botton_navigation"
@@ -37,10 +38,12 @@
             app:labelVisibilityMode="selected"
             app:menu="@menu/bottom_navigation"
             app:onNavigationItemSelected="@{viewModel::onNavigationItemSelected}"
+
+
             />
         <!-- app:layout_constrainBottom_toBottomOf="parent"
-        app:layout_constrainLeft_toLeftOf="parent"
-        app:layout_constrainRight_toRightOf="parent" -->
+            app:layout_constrainLeft_toLeftOf="parent"
+            app:layout_constrainRight_toRightOf="parent" -->
 
 
     </RelativeLayout>

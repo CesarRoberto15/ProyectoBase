@@ -9,6 +9,9 @@ import android.view.View;
 import android.view.ViewGroup;
 
 import com.lab02.proyectobase.R;
+import com.lab02.proyectobase.model.grafico.BarChartView;
+import com.lab02.proyectobase.model.grafico.BarData;
+import java.util.ArrayList;
 
 /**
  * A simple {@link Fragment} subclass.
@@ -61,6 +64,48 @@ public class ThirdFragment extends Fragment {
     public View onCreateView(LayoutInflater inflater, ViewGroup container,
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
-        return inflater.inflate(R.layout.fragment_third, container, false);
+        View view = inflater.inflate(R.layout.fragment_third, container, false);
+        BarChartView barChartView = (BarChartView) view.findViewById(R.id.barChart);
+        ArrayList arrayList = new ArrayList<>();
+        BarData barData = new BarData("C", 100);
+        arrayList.add(barData);
+        barData = new BarData("Java", 50);
+        arrayList.add(barData);
+        barData = new BarData("Python", 150);
+        arrayList.add(barData);
+        barData = new BarData("C++", 60);
+        arrayList.add(barData);
+        barData = new BarData("C#", 100);
+        arrayList.add(barData);
+        barData = new BarData("JS", 20);
+        arrayList.add(barData);
+        barData = new BarData("Kotlin", 40);
+        arrayList.add(barData);
+
+
+        BarData[] arrayBarData = (BarData[]) arrayList.toArray((new BarData[arrayList.size()]));
+        barChartView.dibujarGraficoData(arrayBarData);
+
+        BarChartView barChartView2 = (BarChartView) view.findViewById(R.id.barChart2);
+        ArrayList arrayList2 = new ArrayList<>();
+        BarData barData2 = new BarData("C", 100);
+        arrayList2.add(barData2);
+        barData2 = new BarData("Java", 50);
+        arrayList2.add(barData2);
+        barData2 = new BarData("Python", 150);
+        arrayList2.add(barData2);
+        barData2 = new BarData("C++", 60);
+        arrayList2.add(barData2);
+        barData2 = new BarData("C#", 100);
+        arrayList2.add(barData2);
+        barData2 = new BarData("JS", 20);
+        arrayList2.add(barData2);
+        barData2 = new BarData("Kotlin", 40);
+        arrayList2.add(barData2);
+
+
+        BarData[] arrayBarData2 = (BarData[]) arrayList2.toArray((new BarData[arrayList2.size()]));
+        barChartView2.dibujarGraficoData(arrayBarData2);
+        return view;
     }
 }

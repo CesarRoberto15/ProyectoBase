@@ -72,15 +72,18 @@ public class Second_Activity extends AppCompatActivity {
         // Observamos la variable
         mViewModel.getEvento().observe(this, integerEvent -> {
             Integer id = integerEvent.getContentIfNotHandled();
-            if (id == 1) {
-                loadFragment(firstFragment);
+            if (id!= null){
+                if (id == 1) {
+                    loadFragment(firstFragment);
+                }
+                if (id == 2) {
+                    loadFragment(secondtFragment);
+                }
+                if (id == 3) {
+                    loadFragment(thirdFragment);
+                }
             }
-            if (id == 2) {
-                loadFragment(secondtFragment);
-            }
-            if (id == 3) {
-                loadFragment(thirdFragment);
-            }
+
         });
     }
     public void loadFragment(Fragment fragment){

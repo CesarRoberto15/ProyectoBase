@@ -1,40 +1,64 @@
 <?xml version="1.0" encoding="utf-8"?>
-<FrameLayout xmlns:android="http://schemas.android.com/apk/res/android"
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
     tools:context=".ui.ThirdFragment">
 
-    <!-- TODO: Update blank fragment layout -->
-    <TextView
-        android:id="@+id/title_grafica"
+    <RelativeLayout
         android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="50dp"
-        android:fontFamily="sans-serif-black"
-        android:textColor="@color/green_normal"
-        android:textSize="40sp"
-        android:text="Grafica"
-        android:textAlignment="center"
-        android:gravity="center" />
+        android:layout_height="match_parent">
+        <!-- TODO: Update blank fragment layout -->
+        <TextView
+            android:id="@+id/title_grafica"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/green_normal"
+            android:textSize="40sp"
+            android:text="Grafica"
+            android:textAlignment="center"
+            android:gravity="center" />
 
-    <ImageView
-        android:id="@+id/grafica_barras"
-        android:layout_width="match_parent"
-        android:layout_height="200dp"
-        android:layout_marginTop="150dp"
-        android:src="@android:drawable/ic_lock_idle_alarm"
-        />
-    <TextView
-        android:id="@+id/list_veterinaria"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_marginTop="400dp"
-        android:layout_marginLeft="100dp"
-        android:fontFamily="sans-serif-black"
-        android:textColor="@color/green_normal"
-        android:textSize="12sp"
-        android:text="Datos de la Grafica"
-        />
+        <ImageView
+            android:id="@+id/grafica_barras"
+            android:layout_width="match_parent"
+            android:layout_height="200dp"
+            android:layout_marginTop="150dp"
+            android:src="@android:drawable/ic_lock_idle_alarm"
+            />
 
-</FrameLayout>
+        <TextView
+            android:id="@+id/list_veterinaria"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="400dp"
+            android:layout_marginLeft="100dp"
+            android:fontFamily="sans-serif-black"
+            android:textColor="@color/green_normal"
+            android:textSize="12sp"
+            android:text="Datos de la Grafica"
+            />
+
+        <com.lab02.proyectobase.model.grafico.BarChartView
+            android:id="@+id/barChart"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@color/black"
+            android:padding="16dp"
+            android:layout_below="@+id/list_veterinaria"/>
+
+        <com.lab02.proyectobase.model.grafico.BarChartView
+            android:id="@+id/barChart2"
+            android:layout_width="match_parent"
+            android:layout_height="300dp"
+            android:background="@color/black"
+            android:padding="16dp"
+            android:layout_below="@+id/barChart"/>
+
+    </RelativeLayout>
+
+
+
+</ScrollView>
