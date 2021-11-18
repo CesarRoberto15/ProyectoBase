@@ -67,6 +67,8 @@ public class FirstFragment extends Fragment {
                              Bundle savedInstanceState) {
         // Inflate the layout for this fragment
         View view =  inflater.inflate(R.layout.fragment_first, container, false);
+
+
         rv= (RecyclerView) view.findViewById(R.id.lista_veterinarias);
         DbVeterinarias db = new DbVeterinarias(getContext());
         MenuViewModel menuViewModel =new ViewModelProvider(this).get(MenuViewModel.class);
