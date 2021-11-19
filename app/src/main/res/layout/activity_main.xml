@@ -22,7 +22,7 @@
             android:fontFamily="sans-serif-black"
             android:textColor="@color/green_normal"
             android:textSize="30sp"
-            android:text="Sistema de Veterinarias"
+            android:text="Sistema CanCare"
             android:textAlignment="center"
             android:gravity="center" />
 

@@ -18,13 +18,14 @@
         android:textAlignment="center"
         android:gravity="center" />
 
-    <ImageView
-        android:id="@+id/map_albergue"
+    <fragment xmlns:android="http://schemas.android.com/apk/res/android"
+        xmlns:tools="http://schemas.android.com/tools"
         android:layout_width="match_parent"
-        android:layout_height="200dp"
+        android:layout_height="250dp"
         android:layout_marginTop="150dp"
-        android:src="@android:drawable/ic_delete"
-        />
+        android:id="@+id/mapAlbergue"
+        tools:context=".ui.SecondFragment"
+        android:name="com.google.android.gms.maps.SupportMapFragment" />
     <TextView
         android:id="@+id/list_abergue"
         android:layout_width="match_parent"
