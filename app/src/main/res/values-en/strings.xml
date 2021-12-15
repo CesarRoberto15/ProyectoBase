@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<resources>
+    <string name="app_name">BaseProject</string>
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+
+    <string name="correo_vacio">Invalid Email</string>
+    <string name="password_vacio">Invalid Password</string>
+
+    <!-- DATABASE FIREBASE -->
+    <string name="registro_exitoso">Succesfull Sign up</string>
+    <string name="registro_error">Error with the registration</string>
+
+    <!-- Todo el sistema -->
+        <!-- activity_main.xml -->
+        <string name="sistema_can">CanCare System</string>
+        <string name="email">Email</string>
+        <string name="password">Password</string>
+        <string name="login_button">Login</string>
+        <string name="register_button">Sign up</string>
+        <string name="guest_button">Guest</string>
+
+        <!-- fragment_first.xml -->
+        <string name="veterinaria">Veterinary</string>
+        <string name="lista">List</string>
+
+        <!-- fragment_second.xml -->
+        <string name="albergue">Shelter</string>
+
+        <!-- fragment_third.xml -->
+        <string name="grafica">Graphics</string>
+        <string name="datos_grafica">Graph data</string>
+
+        <!-- bottom_navigation.xml -->
+        <string name="veter">Veterinary</string>
+        <string name="shelter">Shelter</string>
+        <string name="graph">Graph</string>
+</resources>
