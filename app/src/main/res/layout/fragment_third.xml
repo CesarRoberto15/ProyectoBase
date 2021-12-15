@@ -15,11 +15,11 @@
             android:layout_height="wrap_content"
             android:layout_marginTop="50dp"
             android:fontFamily="sans-serif-black"
-            android:textColor="@color/green_normal"
-            android:textSize="40sp"
-            android:text="Grafica"
+            android:gravity="center"
+            android:text="@string/grafica"
             android:textAlignment="center"
-            android:gravity="center" />
+            android:textColor="@color/green_normal"
+            android:textSize="40sp" />
 
         <ImageView
             android:id="@+id/grafica_barras"
@@ -33,13 +33,12 @@
             android:id="@+id/list_veterinaria"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:layout_marginTop="400dp"
             android:layout_marginLeft="100dp"
+            android:layout_marginTop="400dp"
             android:fontFamily="sans-serif-black"
+            android:text="@string/datos_grafica"
             android:textColor="@color/green_normal"
-            android:textSize="12sp"
-            android:text="Datos de la Grafica"
-            />
+            android:textSize="12sp" />
 
         <com.lab02.proyectobase.model.grafico.BarChartView
             android:id="@+id/barChart"

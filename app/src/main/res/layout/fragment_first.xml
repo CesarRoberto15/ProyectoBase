@@ -25,20 +25,20 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="50dp"
                 android:fontFamily="sans-serif-black"
-                android:textColor="@color/green_normal"
-                android:textSize="40sp"
-                android:text="Veterinarias"
+                android:gravity="center"
+                android:text="@string/veterinaria"
                 android:textAlignment="center"
-                android:gravity="center" />
+                android:textColor="@color/green_normal"
+                android:textSize="40sp" />
 
             <fragment xmlns:android="http://schemas.android.com/apk/res/android"
                 xmlns:tools="http://schemas.android.com/tools"
+                android:id="@+id/map"
+                android:name="com.google.android.gms.maps.SupportMapFragment"
                 android:layout_width="match_parent"
                 android:layout_height="250dp"
                 android:layout_marginTop="150dp"
-                android:id="@+id/map"
-                tools:context=".ui.FirstFragment"
-                android:name="com.google.android.gms.maps.SupportMapFragment" />
+                tools:context=".ui.FirstFragment" />
 
             <TextView
                 android:id="@+id/list_veterinaria"
@@ -48,7 +48,7 @@
                 android:fontFamily="sans-serif-black"
                 android:textColor="@color/green_normal"
                 android:textSize="12sp"
-                android:text="Lista"
+                android:text="@string/lista"
                 android:textAlignment="center"
                 android:gravity="center" />
             <androidx.recyclerview.widget.RecyclerView

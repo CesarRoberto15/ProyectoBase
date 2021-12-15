@@ -9,4 +9,30 @@
     <!-- DATABASE FIREBASE -->
     <string name="registro_exitoso">Registro Exitoso</string>
     <string name="registro_error">Hubo un problema a la hora de Registrar</string>
+
+    <!-- Todo el sistema -->
+        <!-- activity_main.xml -->
+        <string name="sistema_can">Sistema CanCare</string>
+        <string name="email">Correo</string>
+        <string name="password">Contraseña</string>
+        <string name="login_button">Iniciar Sesion</string>
+        <string name="register_button">Registrarse</string>
+        <string name="guest_button">Invitado</string>
+
+        <!-- fragment_first.xml -->
+        <string name="veterinaria">Veterinarias</string>
+        <string name="lista">Lista</string>
+
+        <!-- fragment_second.xml -->
+        <string name="albergue">Albergues</string>
+
+        <!-- fragment_third.xml -->
+        <string name="grafica">Grafica</string>
+        <string name="datos_grafica">Datos de la Grafica</string>
+
+        <!-- bottom_navigation.xml -->
+        <string name="veter">Veterinaria</string>
+        <string name="shelter">Albergue</string>
+        <string name="graph">Grafico</string>
+
 </resources>
