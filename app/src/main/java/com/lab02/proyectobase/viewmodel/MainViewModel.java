@@ -33,8 +33,7 @@ public class MainViewModel  extends ViewModel {
     private final MutableLiveData<Event<Integer>> databaseError = new MutableLiveData<>();
     private final MutableLiveData<String> correo = new MutableLiveData<>();
     private final MutableLiveData<String> password = new MutableLiveData<>();
-    private final MutableLiveData<String> text = new MutableLiveData<>();
-    private final MutableLiveData<String> textBase = new MutableLiveData<>();
+
 
     private FirebaseFirestore db = FirebaseFirestore.getInstance();
 
@@ -84,30 +83,8 @@ public class MainViewModel  extends ViewModel {
                         databaseError.setValue(new Event<>(R.string.registro_error));
                     }
                 });*/
-        getDatos();
     }
 
-    public void getDatos(){
-
-        db.collection("users")
-                .get()
-                .addOnCompleteListener(new OnCompleteListener<QuerySnapshot>() {
-                    @Override
-                    public void onComplete(@NonNull Task<QuerySnapshot> task) {
-                        if (task.isSuccessful()) {
-                            for (QueryDocumentSnapshot document : task.getResult()) {
-                                text.setValue(text.getValue()+"\n"+document.getId() + " => " + document.getString("correo") +"\n");
-                            }
-                        }
-                    }
-                });
-    }
-    public void actualizarTextBase(Context context){
-        DbVeterinarias db = new DbVeterinarias(context);
-        for (Veterinarias i : db.mostrarVeterinarias()){
-            textBase.setValue(i.getId()+ " " + i.getCorreo()+ " " + i.getDistrito()+ " " + i.getNombre()+"\n");
-        }
-    }
     public void iniciarSesion (){
         if ( correo.getValue() == null || !Patterns.EMAIL_ADDRESS.matcher(correo.getValue()).matches()){
             error.setValue(new Event<>(R.string.correo_vacio));
@@ -143,11 +120,6 @@ public class MainViewModel  extends ViewModel {
         return correo;
     }
     public MutableLiveData<String> getPassword() { return password; }
-    public MutableLiveData<String> getText() {
-        return text;
-    }
-    public MutableLiveData<String> getTextBase() {
-        return textBase;
-    }
+
 
 }

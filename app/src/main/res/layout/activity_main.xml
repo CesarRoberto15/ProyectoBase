@@ -22,7 +22,7 @@
             android:fontFamily="sans-serif-black"
             android:textColor="@color/green_normal"
             android:textSize="30sp"
-            android:text="Sistema CanCare"
+            android:text="@string/sistema_can"
             android:textAlignment="center"
             android:gravity="center" />
 
@@ -33,7 +33,7 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/title_system"
             android:layout_marginTop="90dp"
-            android:hint="Email"
+            android:hint="@string/correo_vacio"
             android:paddingLeft="10dp"
             android:textSize="15dp"
             android:text="@={viewModel.correo}"/>
@@ -45,7 +45,7 @@
             android:layout_centerHorizontal="true"
             android:layout_below="@+id/edt_email"
             android:layout_marginTop="30dp"
-            android:hint="Password"
+            android:hint="@string/password"
             android:paddingLeft="10dp"
             android:textSize="15sp"
             android:text="@={viewModel.password}"/>
@@ -57,7 +57,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
             android:layout_below="@+id/edt_password"
-            android:text="Iniciar Sesion"
+            android:text="@string/login_button"
             android:onClick="@{()->viewModel.iniciarSesion()}"
             android:textSize="15sp"
             android:textAllCaps="false"
@@ -70,7 +70,7 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="40dp"
             android:layout_below="@+id/btn_login"
-            android:text="Registrarse"
+            android:text="@string/register_button"
             android:onClick="@{()->viewModel.addCliente()}"
             android:textSize="15sp"
             android:textAllCaps="false"
@@ -84,36 +84,13 @@
             android:layout_centerHorizontal="true"
             android:layout_marginTop="20dp"
             android:layout_below="@+id/btn_registrarse"
-            android:text="Invitado"
+            android:text="@string/guest_button"
             android:textSize="15sp"
             android:textAllCaps="false"
             android:textColor="#ffffff"
             android:onClick="@{()->viewModel.goToMenu()}"
             android:background="#236fdd" />
-        <TextView
-            android:id="@+id/aux"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_below="@+id/btn_invited"
-            android:fontFamily="sans-serif-black"
-            android:textColor="@color/green_normal"
-            android:textSize="10sp"
-            android:textAlignment="center"
-            android:gravity="center"
-            android:text="@={viewModel.text}"/>
-        <TextView
-            android:id="@+id/auxBase"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_below="@+id/aux"
-            android:fontFamily="sans-serif-black"
-            android:textColor="@color/green_normal"
-            android:textSize="10sp"
-            android:textAlignment="center"
-            android:gravity="center"
-            android:text="@={viewModel.textBase}"/>
+
 
     </RelativeLayout>
 </layout>

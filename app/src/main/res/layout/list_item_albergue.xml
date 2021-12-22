@@ -5,8 +5,8 @@
 
     <data>
         <variable
-            name="veterinaria"
-            type="com.lab02.proyectobase.model.Veterinarias" />
+            name="albergue"
+            type="com.lab02.proyectobase.model.Albergues" />
         <variable
             name="viewModel"
             type="com.lab02.proyectobase.viewmodel.MenuViewModel" />
@@ -20,7 +20,7 @@
         app:cardElevation="3dp"
         app:cardUseCompatPadding="true"
         app:contentPadding="10dp"
-        android:onClick="@{() -> viewModel.gotoDetalle(1,veterinaria.id)}">
+        android:onClick="@{() -> viewModel.gotoDetalle(2,albergue.id)}">
         <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="match_parent"
@@ -31,7 +31,7 @@
                 android:layout_height="wrap_content"
                 android:layout_marginStart="16dp"
                 android:layout_marginLeft="16dp"
-                android:text="@{veterinaria.nombre}"
+                android:text="@{albergue.nombre}"
                 app:layout_constraintBottom_toBottomOf="parent"
                 app:layout_constraintEnd_toEndOf="parent"
                 app:layout_constraintHorizontal_bias="0.0"
@@ -52,7 +52,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginLeft="16dp"
-                    android:text="@{veterinaria.distrito}"
+                    android:text="@{albergue.distrito}"
 
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
@@ -67,7 +67,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginLeft="16dp"
-                    android:text="@{veterinaria.celular}"
+                    android:text="@{albergue.celular}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -81,7 +81,7 @@
                     android:layout_height="wrap_content"
                     android:layout_marginStart="16dp"
                     android:layout_marginLeft="16dp"
-                    android:text="@{veterinaria.correo}"
+                    android:text="@{albergue.correo}"
                     app:layout_constraintBottom_toBottomOf="parent"
                     app:layout_constraintEnd_toEndOf="parent"
                     app:layout_constraintHorizontal_bias="0.0"
@@ -95,5 +95,4 @@
         </LinearLayout>
 
     </androidx.cardview.widget.CardView>
-
 </layout>

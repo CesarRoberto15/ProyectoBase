@@ -18,7 +18,7 @@ public class DbVeterinarias extends DbHelper{
         super(context);
         this.context = context;
     }
-    public long insertarVeterinaria(String nombre, String distrito, String ubicacion, String correo) {
+    public long insertarVeterinaria(String nombre, String distrito, String latitud, String longitud, String celular, String correo) {
 
         long id = 0;
 
@@ -29,7 +29,9 @@ public class DbVeterinarias extends DbHelper{
             ContentValues values = new ContentValues();
             values.put("nombre", nombre);
             values.put("distrito", distrito);
-            values.put("ubicacion", ubicacion);
+            values.put("latitud", latitud);
+            values.put("longitud", longitud);
+            values.put("celular", celular);
             values.put("correo", correo);
             id = db.insert(TABLE_VETERINARIAS, null, values);
         } catch (Exception ex) {
@@ -53,8 +55,35 @@ public class DbVeterinarias extends DbHelper{
             veterinarias.setId(cursorVeterinarias.getInt(0));
             veterinarias.setNombre(cursorVeterinarias.getString(1));
             veterinarias.setDistrito(cursorVeterinarias.getString(2));
-            veterinarias.setUbicacion(cursorVeterinarias.getString(3));
-            veterinarias.setCorreo(cursorVeterinarias.getString(4));
+            veterinarias.setLatitud(cursorVeterinarias.getString(3));
+            veterinarias.setLongitud(cursorVeterinarias.getString(4));
+            veterinarias.setCelular(cursorVeterinarias.getString(5));
+            veterinarias.setCorreo(cursorVeterinarias.getString(6));
+        }
+
+        cursorVeterinarias.close();
+
+        return veterinarias;
+    }
+    public Veterinarias verVeterinariaByID(int id) {
+
+        DbHelper dbHelper = new DbHelper(context);
+        SQLiteDatabase db = dbHelper.getWritableDatabase();
+
+        Veterinarias veterinarias = null;
+        Cursor cursorVeterinarias;
+
+        cursorVeterinarias = db.rawQuery("SELECT * FROM " + TABLE_VETERINARIAS + " WHERE id=  ? " + "LIMIT 1", new String[]{""+id});
+
+        if (cursorVeterinarias.moveToFirst()) {
+            veterinarias = new Veterinarias();
+            veterinarias.setId(cursorVeterinarias.getInt(0));
+            veterinarias.setNombre(cursorVeterinarias.getString(1));
+            veterinarias.setDistrito(cursorVeterinarias.getString(2));
+            veterinarias.setLatitud(cursorVeterinarias.getString(3));
+            veterinarias.setLongitud(cursorVeterinarias.getString(4));
+            veterinarias.setCelular(cursorVeterinarias.getString(5));
+            veterinarias.setCorreo(cursorVeterinarias.getString(6));
         }
 
         cursorVeterinarias.close();
@@ -78,8 +107,10 @@ public class DbVeterinarias extends DbHelper{
                 veterinarias.setId(cursorVeterinarias.getInt(0));
                 veterinarias.setNombre(cursorVeterinarias.getString(1));
                 veterinarias.setDistrito(cursorVeterinarias.getString(2));
-                veterinarias.setUbicacion(cursorVeterinarias.getString(3));
-                veterinarias.setCorreo(cursorVeterinarias.getString(4));
+                veterinarias.setLatitud(cursorVeterinarias.getString(3));
+                veterinarias.setLongitud(cursorVeterinarias.getString(4));
+                veterinarias.setCelular(cursorVeterinarias.getString(5));
+                veterinarias.setCorreo(cursorVeterinarias.getString(6));
                 listaVeterinarias.add(veterinarias);
             } while (cursorVeterinarias.moveToNext());
         }

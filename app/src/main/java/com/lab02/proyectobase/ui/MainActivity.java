@@ -34,16 +34,16 @@ public class MainActivity extends AppCompatActivity {
         mBinding.setLifecycleOwner(this);
         setupNavigation();
         setupDataBase();
-        mViewModel.actualizarTextBase(this);
+
 
     }
     private void setupDataBase() {
         DbHelper dbHelper = new DbHelper (this);
         SQLiteDatabase db =dbHelper.getWritableDatabase();
         if ( db!= null){
-            Toast.makeText(this, "BASE DE DATOS CREADA", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.database, Toast.LENGTH_LONG).show();
         }else{
-            Toast.makeText(this, "BASE DE DATOS NO CREADA", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.databaseError, Toast.LENGTH_LONG).show();
         }
 
     }

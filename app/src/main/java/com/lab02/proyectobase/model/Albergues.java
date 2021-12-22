@@ -1,6 +1,6 @@
 package com.lab02.proyectobase.model;
 
-public class Veterinarias {
+public class Albergues {
     private int id;
     private String nombre;
     private String distrito;
@@ -9,7 +9,7 @@ public class Veterinarias {
     private String celular;
     private String correo;
 
-    public Veterinarias() {
+    public Albergues() {
         this.id = 0;
         this.nombre = "";
         this.distrito = "";
@@ -20,7 +20,7 @@ public class Veterinarias {
 
     }
 
-    public Veterinarias(int id, String nombre, String distrito, String latitud,String longitud,String celular, String correo) {
+    public Albergues(int id, String nombre, String distrito, String latitud,String longitud,String celular, String correo) {
         this.id = id;
         this.nombre = nombre;
         this.distrito = distrito;
