@@ -98,7 +98,10 @@ public class SecondFragment extends Fragment {
         sv = (SearchView) mBinding.getRoot().findViewById(R.id.buscarAlbergues);
 
         sv.setOnQueryTextListener(mViewModel);
-        mViewModel.setAlberguesAdapter(alberguesAdapter);
+        if (mViewModel != null){
+            mViewModel.setAlberguesAdapter(alberguesAdapter);
+        }
+
         return mBinding.getRoot();
     }
     //ubicacion del mapa en la aplicacion

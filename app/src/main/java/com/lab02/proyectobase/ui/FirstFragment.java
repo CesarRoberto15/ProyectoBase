@@ -101,7 +101,10 @@ public class FirstFragment extends Fragment {
         sv = (SearchView) mBinding.getRoot().findViewById(R.id.buscarVeterinarias);
 
         sv.setOnQueryTextListener(mViewModel);
-        mViewModel.setVeterinariasAdapter(veterinariasAdapter);
+        if (mViewModel != null){
+            mViewModel.setVeterinariasAdapter(veterinariasAdapter);
+        }
+
         return mBinding.getRoot();
     }
     //ubicacion del mapa en la aplicacion

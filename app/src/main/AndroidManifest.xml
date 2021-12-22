@@ -11,7 +11,7 @@
         android:theme="@style/Theme.ProyectoBase">
         <meta-data
             android:name="com.google.android.geo.API_KEY"
-            android:value="API" />
+            android:value="AIzaSyD8v0KoS-eq7vyv8qfJXhggwYNZ1gAkfD0" />
         <activity
             android:name=".ui.Second_Activity"
             android:exported="false" />
