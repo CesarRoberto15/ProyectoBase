@@ -4,11 +4,16 @@ import android.os.Bundle;
 
 import androidx.fragment.app.Fragment;
 
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
 
 import com.lab02.proyectobase.R;
+import com.lab02.proyectobase.model.Albergues;
+import com.lab02.proyectobase.model.Data.DbAlbergues;
+import com.lab02.proyectobase.model.Data.DbVeterinarias;
+import com.lab02.proyectobase.model.Veterinarias;
 import com.lab02.proyectobase.model.grafico.BarChartView;
 import com.lab02.proyectobase.model.grafico.BarData;
 import java.util.ArrayList;
@@ -66,46 +71,62 @@ public class ThirdFragment extends Fragment {
         // Inflate the layout for this fragment
         View view = inflater.inflate(R.layout.fragment_third, container, false);
         BarChartView barChartView = (BarChartView) view.findViewById(R.id.barChart);
-        ArrayList arrayList = new ArrayList<>();
-        BarData barData = new BarData("C", 100);
-        arrayList.add(barData);
-        barData = new BarData("Java", 50);
-        arrayList.add(barData);
-        barData = new BarData("Python", 150);
-        arrayList.add(barData);
-        barData = new BarData("C++", 60);
-        arrayList.add(barData);
-        barData = new BarData("C#", 100);
-        arrayList.add(barData);
-        barData = new BarData("JS", 20);
-        arrayList.add(barData);
-        barData = new BarData("Kotlin", 40);
-        arrayList.add(barData);
+        BarChartView barChartView2 = (BarChartView) view.findViewById(R.id.barChart2);
 
 
-        BarData[] arrayBarData = (BarData[]) arrayList.toArray((new BarData[arrayList.size()]));
+        DbVeterinarias dbVeterinarias = new DbVeterinarias(getContext());
+        ArrayList<Veterinarias> array = dbVeterinarias.mostrarVeterinarias();
+        ArrayList<BarData> datos = new ArrayList<BarData>();
+        for (int i =0 ;i<array.size();i++){
+
+            if (datos.size() ==0){
+                datos.add(new BarData(array.get(i).getDistrito(),1));
+            }else{
+                if (!getStrings(datos).contains(array.get(i).getDistrito())){
+                    datos.add(new BarData(array.get(i).getDistrito(),1));
+                }else{
+                    for (int j=0 ;j<datos.size();j++){
+                        if (datos.get(j).getLayoutX().equalsIgnoreCase(array.get(i).getDistrito())){
+                            datos.get(j).setValue(datos.get(j).getValor()+1);
+                        }
+                    }
+                }
+            }
+        }
+        BarData[] arrayBarData = (BarData[]) datos.toArray((new BarData[datos.size()]));
         barChartView.dibujarGraficoData(arrayBarData);
 
-        BarChartView barChartView2 = (BarChartView) view.findViewById(R.id.barChart2);
-        ArrayList arrayList2 = new ArrayList<>();
-        BarData barData2 = new BarData("C", 100);
-        arrayList2.add(barData2);
-        barData2 = new BarData("Java", 50);
-        arrayList2.add(barData2);
-        barData2 = new BarData("Python", 150);
-        arrayList2.add(barData2);
-        barData2 = new BarData("C++", 60);
-        arrayList2.add(barData2);
-        barData2 = new BarData("C#", 100);
-        arrayList2.add(barData2);
-        barData2 = new BarData("JS", 20);
-        arrayList2.add(barData2);
-        barData2 = new BarData("Kotlin", 40);
-        arrayList2.add(barData2);
 
+        DbAlbergues dbAlbergues = new DbAlbergues(getContext());
+        ArrayList<Albergues> array2 = dbAlbergues.mostrarAlbergues();
+        ArrayList<BarData> datos2 = new ArrayList<BarData>();
+        for (int i =0 ;i<array2.size();i++){
 
-        BarData[] arrayBarData2 = (BarData[]) arrayList2.toArray((new BarData[arrayList2.size()]));
+            if (datos2.size() ==0){
+                datos2.add(new BarData(array2.get(i).getDistrito(),1));
+            }else{
+                if (!getStrings(datos2).contains(array2.get(i).getDistrito())){
+                    datos2.add(new BarData(array2.get(i).getDistrito(),1));
+                }else{
+                    for (int j=0 ;j<datos2.size();j++){
+                        if (datos2.get(j).getLayoutX().equalsIgnoreCase(array2.get(i).getDistrito())){
+                            datos2.get(j).setValue(datos2.get(j).getValor()+1);
+                        }
+                    }
+                }
+            }
+        }
+
+        BarData[] arrayBarData2 = (BarData[]) datos2.toArray((new BarData[datos2.size()]));
+        Log.d("DATOS 2: ", "DATOS DEL ARRAY DOS : "+datos2.size()+" VALOR   " +datos2.get(1).getValor());
         barChartView2.dibujarGraficoData(arrayBarData2);
         return view;
+    }
+    public ArrayList<String> getStrings (ArrayList<BarData> arreglo){
+        ArrayList <String> res = new ArrayList<String>();
+        for (int i=0; i<arreglo.size();i++){
+            res.add(arreglo.get(i).getLayoutX());
+        }
+        return res;
     }
 }

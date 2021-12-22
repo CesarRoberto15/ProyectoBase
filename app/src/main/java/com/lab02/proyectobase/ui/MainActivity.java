@@ -38,7 +38,7 @@ public class MainActivity extends AppCompatActivity {
         mBinding.setLifecycleOwner(this);
         setupNavigation();
         setupDataBase();
-        mViewModel.actualizarTextBase(this);
+
 
         // fullscreen
         if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
@@ -50,9 +50,9 @@ public class MainActivity extends AppCompatActivity {
         DbHelper dbHelper = new DbHelper (this);
         SQLiteDatabase db =dbHelper.getWritableDatabase();
         if ( db!= null){
-            Toast.makeText(this, "BASE DE DATOS CREADA", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.database, Toast.LENGTH_LONG).show();
         }else{
-            Toast.makeText(this, "BASE DE DATOS NO CREADA", Toast.LENGTH_LONG).show();
+            Toast.makeText(this, R.string.databaseError, Toast.LENGTH_LONG).show();
         }
 
     }

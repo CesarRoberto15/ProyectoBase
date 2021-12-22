@@ -195,6 +195,9 @@ public class BarChartView extends View{
         mPaint.getTextBounds(label, 0, label.length(), bounds);
         int y = origin.y + ditanciaLayoutValor + getMaximaAlturaTextoEjeX();
         int x = centerX - bounds.width() / 2;
+        if (label.length()>= 12){
+            label= label.substring(0,12);
+        }
         mPaint.setTextSize(dpToPixels(mContext, tamanoLetra));
         mPaint.setTypeface(Typeface.DEFAULT);
         canvas.drawText(label, x, y, mPaint);
