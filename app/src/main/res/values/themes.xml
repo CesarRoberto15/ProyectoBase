@@ -14,10 +14,18 @@
         <!-- Customize your theme here. -->
     </style>
 
+    <style name="Theme.ProyectoBase.NoActionBarAndStatusBar">
+        <item name="windowNoTitle">true</item>
+        <item name="windowActionBar">false</item>
+        <item name="android:windowTranslucentNavigation">true</item>
+        <item name="android:windowTranslucentStatus">true</item>
+        <item name="android:fitsSystemWindows">true</item>
+    </style>
+
     <style name="BottomNavigation">
         <item name="android:background">@color/green_dark</item>
         <item name="itemIconTint">@color/green_light_2</item>
         <item name="itemTextColor">@color/green_light_2</item>
-
     </style>
+
 </resources>

@@ -4,22 +4,29 @@ public class Veterinarias {
     private int id;
     private String nombre;
     private String distrito;
-    private String ubicacion;
+    private String latitud;
+    private String longitud;
+    private String celular;
     private String correo;
 
     public Veterinarias() {
         this.id = 0;
         this.nombre = "";
         this.distrito = "";
-        this.ubicacion = "";
+        this.latitud = "";
+        this.longitud = "";
+        this.celular = "";
         this.correo = "";
+
     }
 
-    public Veterinarias(int id, String nombre, String distrito, String ubicacion, String correo) {
+    public Veterinarias(int id, String nombre, String distrito, String latitud,String longitud,String celular, String correo) {
         this.id = id;
         this.nombre = nombre;
         this.distrito = distrito;
-        this.ubicacion = ubicacion;
+        this.latitud = latitud;
+        this.longitud = longitud;
+        this.celular = celular;
         this.correo = correo;
     }
 
@@ -47,19 +54,35 @@ public class Veterinarias {
         this.distrito = distrito;
     }
 
-    public String getUbicacion() {
-        return ubicacion;
-    }
-
-    public void setUbicacion(String ubicacion) {
-        this.ubicacion = ubicacion;
-    }
-
     public String getCorreo() {
         return correo;
     }
 
     public void setCorreo(String correo) {
         this.correo = correo;
+    }
+
+    public String getLatitud() {
+        return latitud;
+    }
+
+    public void setLatitud(String latitud) {
+        this.latitud = latitud;
+    }
+
+    public String getLongitud() {
+        return longitud;
+    }
+
+    public void setLongitud(String longitud) {
+        this.longitud = longitud;
+    }
+
+    public String getCelular() {
+        return celular;
+    }
+
+    public void setCelular(String celular) {
+        this.celular = celular;
     }
 }

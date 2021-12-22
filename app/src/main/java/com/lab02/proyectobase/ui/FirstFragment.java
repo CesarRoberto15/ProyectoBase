@@ -7,6 +7,8 @@ import androidx.fragment.app.Fragment;
 import androidx.lifecycle.ViewModelProvider;
 import androidx.recyclerview.widget.RecyclerView;
 import androidx.recyclerview.widget.LinearLayoutManager;
+
+import android.util.Log;
 import android.view.LayoutInflater;
 import android.view.View;
 import android.view.ViewGroup;
@@ -79,6 +81,7 @@ public class FirstFragment extends Fragment {
         rv= (RecyclerView) view.findViewById(R.id.lista_veterinarias);
 
         DbVeterinarias db = new DbVeterinarias(getContext());
+        Log.d("db", String.valueOf(db));
         MenuViewModel menuViewModel =new ViewModelProvider(this).get(MenuViewModel.class);
         VeterinariasAdapter veterinariasAdapter = new VeterinariasAdapter(menuViewModel);
         veterinariasAdapter.setVeterinariasList(db.mostrarVeterinarias());

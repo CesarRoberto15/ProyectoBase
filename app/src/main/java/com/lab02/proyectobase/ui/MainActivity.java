@@ -5,10 +5,14 @@ import androidx.databinding.DataBindingUtil;
 import androidx.lifecycle.LiveData;
 import androidx.lifecycle.ViewModelProvider;
 
+import android.app.ActionBar;
 import android.content.Intent;
 import android.database.sqlite.SQLiteDatabase;
+import android.os.Build;
 import android.os.Bundle;
 import android.view.View;
+import android.view.Window;
+import android.view.WindowManager;
 import android.widget.Button;
 import android.widget.Toast;
 
@@ -35,6 +39,11 @@ public class MainActivity extends AppCompatActivity {
         setupNavigation();
         setupDataBase();
         mViewModel.actualizarTextBase(this);
+
+        // fullscreen
+        if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.KITKAT){
+            getWindow().setFlags(WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS,WindowManager.LayoutParams.FLAG_LAYOUT_NO_LIMITS);
+        }
 
     }
     private void setupDataBase() {

@@ -14,107 +14,181 @@
         android:layout_height="match_parent"
         tools:context=".ui.MainActivity">
 
-        <TextView
-            android:id="@+id/title_system"
+        <LinearLayout
             android:layout_width="match_parent"
             android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:fontFamily="sans-serif-black"
-            android:gravity="center"
-            android:text="@string/sistema_can"
-            android:textAlignment="center"
-            android:textColor="@color/green_normal"
-            android:textSize="30sp" />
+            android:orientation="vertical">
 
-        <EditText
-            android:id="@+id/edt_email"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:layout_below="@+id/title_system"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="90dp"
-            android:hint="@string/email"
-            android:paddingLeft="10dp"
-            android:text="@={viewModel.correo}"
-            android:textSize="15dp" />
+            <FrameLayout
+                android:layout_width="match_parent"
+                android:layout_height="273dp"
+                android:background="@drawable/blue_bg">
 
-        <EditText
-            android:id="@+id/edt_password"
-            android:layout_width="300dp"
-            android:layout_height="40dp"
-            android:layout_below="@+id/edt_email"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="30dp"
-            android:hint="@string/password"
-            android:paddingLeft="10dp"
-            android:text="@={viewModel.password}"
-            android:textSize="15sp" />
+                <ImageView
+                    android:layout_width="97dp"
+                    android:layout_height="97dp"
+                    android:layout_gravity="center_horizontal"
+                    android:layout_marginTop="93dp"
+                    android:src="@drawable/logo"/>
 
-        <Button
-            android:id="@+id/btn_login"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/edt_password"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="40dp"
-            android:background="#236fdd"
-            android:onClick="@{()->viewModel.iniciarSesion()}"
-            android:text="@string/login_button"
-            android:textAllCaps="false"
-            android:textColor="#ffffff"
-            android:textSize="15sp" />
+            </FrameLayout>
 
-        <Button
-            android:id="@+id/btn_registrarse"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_login"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="40dp"
-            android:background="#236fdd"
-            android:onClick="@{()->viewModel.addCliente()}"
-            android:text="@string/register_button"
-            android:textAllCaps="false"
-            android:textColor="#ffffff"
-            android:textSize="15sp" />
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="62dp"
+                android:layout_marginTop="37dp"
+                android:layout_marginRight="62dp"
+                android:background="@drawable/blue_border_rounded_cornwe">
 
-        <Button
-            android:id="@+id/btn_invited"
-            android:layout_width="200dp"
-            android:layout_height="wrap_content"
-            android:layout_below="@+id/btn_registrarse"
-            android:layout_centerHorizontal="true"
-            android:layout_marginTop="20dp"
-            android:background="#236fdd"
-            android:onClick="@{()->viewModel.goToMenu()}"
-            android:text="@string/guest_button"
-            android:textAllCaps="false"
-            android:textColor="#ffffff"
-            android:textSize="15sp" />
-        <TextView
-            android:id="@+id/aux"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_below="@+id/btn_invited"
-            android:fontFamily="sans-serif-black"
-            android:textColor="@color/green_normal"
-            android:textSize="10sp"
-            android:textAlignment="center"
-            android:gravity="center"
-            android:text="@={viewModel.text}"/>
-        <TextView
-            android:id="@+id/auxBase"
-            android:layout_width="match_parent"
-            android:layout_height="wrap_content"
-            android:layout_marginTop="50dp"
-            android:layout_below="@+id/aux"
-            android:fontFamily="sans-serif-black"
-            android:textColor="@color/green_normal"
-            android:textSize="10sp"
-            android:textAlignment="center"
-            android:gravity="center"
-            android:text="@={viewModel.textBase}"/>
+                <EditText
+                    android:id="@+id/edt_email"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:background="@android:color/transparent"
+                    android:layout_toRightOf="@+id/username_icon"
+                    android:fontFamily="@font/poppins_regular"
+                    android:inputType="textEmailAddress"
+                    android:maxLines="1"
+                    android:paddingLeft="17dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:hint="@string/email"
+                    android:text="@={viewModel.correo}"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/username_icon"
+                    android:layout_width="14.7dp"
+                    android:layout_height="10.3dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="17dp"
+                    android:src="@drawable/email"/>
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="62dp"
+                android:layout_marginTop="12.7dp"
+                android:layout_marginRight="62dp"
+                android:background="@drawable/blue_border_rounded_cornwe">
+
+                <EditText
+                    android:id="@+id/edt_password"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_toRightOf="@id/icon"
+                    android:hint="@string/password"
+                    android:paddingLeft="10dp"
+                    android:paddingTop="15dp"
+                    android:paddingBottom="15dp"
+                    android:text="@={viewModel.password}"
+                    android:background="@android:color/transparent"
+                    android:fontFamily="@font/poppins_regular"
+                    android:inputType="textPassword"
+                    android:maxLines="1"
+                    android:textCursorDrawable="@drawable/cursor_color"
+                    android:textSize="12sp" />
+
+                <ImageView
+                    android:id="@+id/icon"
+                    android:layout_width="14.7dp"
+                    android:layout_height="10.3dp"
+                    android:layout_centerVertical="true"
+                    android:layout_marginLeft="17dp"
+                    android:src="@drawable/password"/>
+
+            </RelativeLayout>
+
+            <!-- Buttons -->
+            <TextView
+                android:id="@+id/btn_login"
+                android:onClick="@{()->viewModel.iniciarSesion()}"
+                android:text="@string/login_button"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="62dp"
+                android:layout_marginTop="40dp"
+                android:layout_marginRight="62dp"
+                android:background="@drawable/blue_fill__rounded_color"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/btn_registrarse"
+                android:onClick="@{()->viewModel.addCliente()}"
+                android:text="@string/register_button"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="62dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="62dp"
+                android:background="@drawable/blue_fill__rounded_color"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <TextView
+                android:id="@+id/btn_invited"
+                android:onClick="@{()->viewModel.goToMenu()}"
+                android:text="@string/guest_button"
+                android:layout_gravity="center"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginLeft="62dp"
+                android:layout_marginTop="10dp"
+                android:layout_marginRight="62dp"
+                android:background="@drawable/blue_fill__rounded_color"
+                android:fontFamily="@font/poppins_medium"
+                android:gravity="center"
+                android:paddingTop="14dp"
+                android:paddingBottom="14dp"
+                android:textAllCaps="false"
+                android:textColor="#ffffff"
+                android:textSize="12sp" />
+
+            <!-- Messages -->
+            <TextView
+                android:id="@+id/aux"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_below="@+id/btn_invited"
+                android:fontFamily="sans-serif-black"
+                android:textColor="@color/green_normal"
+                android:textSize="10sp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:text="@={viewModel.text}"/>
+
+            <TextView
+                android:id="@+id/auxBase"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="50dp"
+                android:layout_below="@+id/aux"
+                android:fontFamily="sans-serif-black"
+                android:textColor="@color/green_normal"
+                android:textSize="10sp"
+                android:textAlignment="center"
+                android:gravity="center"
+                android:text="@={viewModel.textBase}"/>
+
+        </LinearLayout>
 
     </RelativeLayout>
 </layout>

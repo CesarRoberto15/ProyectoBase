@@ -23,13 +23,17 @@ public class DbHelper extends SQLiteOpenHelper {
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "nombre TEXT NOT NULL," +
                 "distrito TEXT NOT NULL," +
-                "ubicacion TEXT NOT NULL," +
+                "latitud TEXT NOT NULL," +
+                "longitud TEXT NOT NULL," +
+                "celular TEXT," +
                 "correo TEXT )");
         sqLiteDatabase.execSQL("CREATE TABLE " + TABLE_ALBERGUES + "(" +
                 "id INTEGER PRIMARY KEY AUTOINCREMENT," +
                 "nombre TEXT NOT NULL," +
                 "distrito TEXT NOT NULL," +
-                "ubicacion TEXT NOT NULL," +
+                "latitud TEXT NOT NULL," +
+                "longitud TEXT NOT NULL," +
+                "celular TEXT," +
                 "correo TEXT )");
 
     }

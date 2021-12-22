@@ -53,7 +53,7 @@ public class MenuViewModel  extends ViewModel  implements BottomNavigationView.O
                                 Veterinarias aux= dbVeterinarias.verVeterinaria(document.getString("correo"));
                                 if (aux==null){
                                     dbVeterinarias.insertarVeterinaria(document.getString("nombre"), document.getString("distrito"),
-                                            document.getString("ubicacion") ,document.getString("correo"));
+                                            document.getString("latitud") ,document.getString("longitud") ,document.getString("celular") ,document.getString("correo"));
                                 }
                             }
                         }
@@ -62,7 +62,9 @@ public class MenuViewModel  extends ViewModel  implements BottomNavigationView.O
     }
     private final MutableLiveData<Event<Integer>> evento = new MutableLiveData<>();
 
-
+    public void gotoDetalle(int type,int id){
+        // completar
+    }
 
     //VARIABLES OBSERVADAS
     public MutableLiveData<Event<Integer>> getEvento() {

@@ -46,18 +46,20 @@
                 android:layout_height="wrap_content"
                 android:layout_marginTop="400dp"
                 android:fontFamily="sans-serif-black"
-                android:textColor="@color/green_normal"
-                android:textSize="12sp"
+                android:gravity="center"
                 android:text="@string/lista"
                 android:textAlignment="center"
-                android:gravity="center" />
+                android:textColor="@color/green_normal"
+                android:textSize="12sp" />
+
             <androidx.recyclerview.widget.RecyclerView
+                android:id="@+id/lista_veterinarias"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:id="@+id/lista_veterinarias"
-                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager"
-                android:gravity="center"   android:layout_below="@+id/list_veterinaria">
-            <!---->
+                android:layout_below="@+id/list_veterinaria"
+                android:gravity="center"
+                app:layoutManager="androidx.recyclerview.widget.LinearLayoutManager">
+                <!---->
             </androidx.recyclerview.widget.RecyclerView>
         </RelativeLayout>
 
