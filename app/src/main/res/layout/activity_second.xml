@@ -4,7 +4,6 @@
     xmlns:tools="http://schemas.android.com/tools">
 
     <data>
-
         <variable
             name="viewModel"
             type="com.lab02.proyectobase.viewmodel.MenuViewModel" />
@@ -14,7 +13,9 @@
     <RelativeLayout
         android:layout_width="match_parent"
         android:layout_height="match_parent"
-        tools:context=".ui.Second_Activity">
+        tools:context=".ui.Second_Activity"
+        android:background="#1566E0"
+        >
 
         <FrameLayout
             android:id="@+id/frame_container"

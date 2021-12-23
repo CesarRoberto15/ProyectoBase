@@ -20,6 +20,8 @@
     <string name="guest_button">Invitado</string>
     <string name="database">Base de datos creada</string>
     <string name="databaseError">Base de datos no creada</string>
+    <string name="next_text">Ser Invitado</string>
+
     <!-- fragment_first.xml -->
     <string name="veterinaria">Veterinarias</string>
     <string name="lista_veter">Lista de Veterinarias </string>
