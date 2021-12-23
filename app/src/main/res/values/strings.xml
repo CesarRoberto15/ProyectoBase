@@ -3,8 +3,8 @@
     <!-- TODO: Remove or change this placeholder text -->
     <string name="hello_blank_fragment">Hello blank fragment</string>
 
-    <string name="correo_vacio">Ingrese un correo valido</string>
-    <string name="password_vacio">Ingrese una contraseña valida</string>
+    <string name="correo_vacio">Ingrese un correo válido</string>
+    <string name="password_vacio">Ingrese una contraseña válida</string>
 
     <!-- DATABASE FIREBASE -->
     <string name="registro_exitoso">Registro Exitoso</string>
@@ -15,7 +15,7 @@
     <string name="sistema_can">Sistema CanCare</string>
     <string name="email">Correo</string>
     <string name="password">Contraseña</string>
-    <string name="login_button">Iniciar Sesion</string>
+    <string name="login_button">Iniciar Sesión</string>
     <string name="register_button">Registrarse</string>
     <string name="guest_button">Invitado</string>
     <string name="database">Base de datos creada</string>
@@ -30,14 +30,14 @@
     <string name="albergue">Albergues</string>
     <string name="lista_albergue">Lista de Albergues </string>
     <!-- fragment_third.xml -->
-    <string name="grafica">Graficas</string>
-    <string name="datos_grafica">Grafica de Cantidad de Veterinarias vs Distritos</string>
-    <string name="datos_grafica2">Grafica de Cantidad de Albergues vs Distritos</string>
+    <string name="grafica">Gráficas</string>
+    <string name="datos_grafica">Gráfica de Cantidad de Veterinarias vs Distritos</string>
+    <string name="datos_grafica2">Gráfica de Cantidad de Albergues vs Distritos</string>
 
     <!-- bottom_navigation.xml -->
     <string name="veter">Veterinaria</string>
     <string name="shelter">Albergue</string>
-    <string name="graph">Grafico</string>
+    <string name="graph">Gráfico</string>
 
     <!-- vista_detalle.xml -->
     <string name="detailTitle">VISTA DETALLE</string>
@@ -48,6 +48,6 @@
     <string name="detailCall">Añadir a contactos </string>
     <string name="detailSendEmail">Enviar Correo </string>
     <!-- Error -->
-    <string name="emptyPhone">No hay un numero al cual agregar</string>
+    <string name="emptyPhone">No hay un número al cual agregar</string>
     <string name="emptyEmail">No hay un correo al cual enviar</string>
 </resources>
