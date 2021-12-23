@@ -2,14 +2,14 @@
 <menu xmlns:android="http://schemas.android.com/apk/res/android">
     <item
         android:id="@+id/firstFragment"
-        android:icon="@android:drawable/ic_input_add"
+        android:icon="@drawable/ic_baseline_local_hospital_24"
         android:title="@string/veter"/>
     <item
         android:id="@+id/secondFragment"
-        android:icon="@android:drawable/ic_delete"
+        android:icon="@drawable/ic_baseline_home_24"
         android:title="@string/shelter"/>
     <item
         android:id="@+id/thirdFragment"
-        android:icon="@android:drawable/ic_lock_idle_alarm"
+        android:icon="@drawable/ic_baseline_equalizer_24"
         android:title="@string/graph"/>
 </menu>

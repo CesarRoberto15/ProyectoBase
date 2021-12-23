@@ -31,10 +31,11 @@
                         android:id="@+id/titulo"
                         android:layout_width="match_parent"
                         android:layout_height="match_parent"
+                        android:fontFamily="@font/poppins_medium"
                         android:text="@string/detailTitle"
                         android:textAlignment="center"
                         android:textSize="40sp"
-                        android:textColor="@color/green_dark" />
+                        android:textColor="@color/white" />
 
                     <androidx.cardview.widget.CardView
                         android:layout_width="match_parent"

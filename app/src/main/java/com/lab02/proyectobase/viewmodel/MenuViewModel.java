@@ -140,10 +140,6 @@ public class MenuViewModel  extends ViewModel  implements BottomNavigationView.O
         evento.setValue(new Event<>(id));
     }
 
-    public void gotoDetalle(int type,int id){
-        // completar
-    }
-
     //VARIABLES OBSERVADAS
     public MutableLiveData<Event<Integer>> getEvento() {
         return evento;

@@ -49,11 +49,12 @@ public class MainActivity extends AppCompatActivity {
     private void setupDataBase() {
         DbHelper dbHelper = new DbHelper (this);
         SQLiteDatabase db =dbHelper.getWritableDatabase();
+        /*
         if ( db!= null){
             Toast.makeText(this, R.string.database, Toast.LENGTH_LONG).show();
         }else{
             Toast.makeText(this, R.string.databaseError, Toast.LENGTH_LONG).show();
-        }
+        }*/
 
     }
     //METODO PARA GESTIONAR LOS EVENTOS QUE SE VAN DANDO

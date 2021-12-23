@@ -21,13 +21,15 @@
     <string name="guest_button">Guest</string>
     <string name="database">Database created</string>
     <string name="databaseError">Database not created</string>
+    <string name="next_text">Be a Guest</string>
+
     <!-- fragment_first.xml -->
     <string name="veterinaria">Veterinary</string>
     <string name="lista_veter">Veterinary List </string>
 
     <!-- fragment_second.xml -->
     <string name="albergue">Shelter</string>
-    <string name="lista_albergue">list of shelters </string>
+    <string name="lista_albergue">Shelter List </string>
     <!-- fragment_third.xml -->
     <string name="grafica">Graphics</string>
     <string name="datos_grafica">Graph of Number of Veterinarians vs Districts</string>
@@ -37,7 +39,7 @@
     <string name="shelter">Shelter</string>
     <string name="graph">Graph</string>
     <!-- vista_detalle.xml -->
-    <string name="detailTitle">VISTA DETALLE</string>
+    <string name="detailTitle">DETAIL VIEW</string>
     <string name="detailName">Name : </string>
     <string name="detailPhone">Cell phone :</string>
     <string name="detailDistrito">District:</string>
